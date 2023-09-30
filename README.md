@@ -1,2 +1,2 @@
 # DependencyKit
- A dependency builder library for Swift
+ A dependency builder library that written in Swift for UIKit projects.
