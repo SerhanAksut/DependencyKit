@@ -6,12 +6,10 @@ import PackageDescription
 let package = Package(
     name: "DependencyKit",
     products: [
-        .library(
-            name: "DependencyKit",
-            targets: ["DependencyKit"]),
+        .library(name: "FeatureStore", targets: ["FeatureStore"]),
     ],
     targets: [
-        .target(name: "DependencyKit"),
-        .testTarget(name: "DependencyKitTests", dependencies: ["DependencyKit"]),
+        .target(name: "FeatureStore"),
+        .testTarget(name: "FeatureStoreTests", dependencies: ["FeatureStore"]),
     ]
 )
