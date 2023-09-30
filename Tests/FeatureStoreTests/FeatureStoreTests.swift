@@ -20,7 +20,7 @@ final class FeatureStoreTests: XCTestCase {
         featureStore = nil
     }
     
-    func test__resolve_when_registration_successful() {
+    func test__resolve_when_feature_store_successful() {
         featureStore.register(MockFeatureProtocol.self) {
             MockFeature()
         }
@@ -28,7 +28,7 @@ final class FeatureStoreTests: XCTestCase {
         XCTAssertNotNil(result)
     }
     
-    func test__resolve_when_registration_failed() {
+    func test__resolve_when_feature_store_unsuccessful() {
         featureStore.register(MockFeatureProtocol.self) {
             nil
         }
