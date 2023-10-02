@@ -84,6 +84,9 @@ Let's consider a scenario where you have two different modules, `FeatureA` and `
 Firstly, we need to register these features:
 
 ```swift
+import FeatureStore
+import UIKit
+
 FeatureStore.shared.register(FeatureAProtocol.self) {
     FeatureA()
 }
@@ -97,6 +100,9 @@ For each feature, create resolvers:
 FeatureA:
 
 ```swift
+import FeatureStore
+import UIKit
+
 public protocol FeatureAProtocol {
     func build() -> UIViewController
 }
