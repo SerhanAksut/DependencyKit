@@ -84,12 +84,12 @@ Let's consider a scenario where you have two different modules, `FeatureA` and `
 Firstly, we need to register these features:
 
 ```swift
-    FeatureStore.shared.register(FeatureAProtocol.self) {
-        FeatureA()
-    }
-    FeatureStore.shared.register(FeatureBProtocol.self) {
-        FeatureB()
-    }
+FeatureStore.shared.register(FeatureAProtocol.self) {
+    FeatureA()
+}
+FeatureStore.shared.register(FeatureBProtocol.self) {
+    FeatureB()
+}
 ```
 
 For each feature, create resolvers:
