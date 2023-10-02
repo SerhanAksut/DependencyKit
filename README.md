@@ -25,7 +25,7 @@ FeatureStore is a Swift package library designed to streamline feature navigatio
 
 You can integrate FeatureStore into your project using Swift Package Manager (SPM). Add the following dependency to your `Package.swift` file:
 
-```
+```swift
 dependencies: [
     .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.0.0")
 ]
@@ -33,7 +33,7 @@ dependencies: [
 
 Then, import `FeatureStore` dependency in your Swift files where you intend to use it:
 
-```
+```swift
 import FeatureStore
 ```
 
@@ -41,7 +41,7 @@ import FeatureStore
 To get started, follow these basic steps:
 
 ### 1. Register a Feature
-```
+```swift
 FeatureStore.shared.register(MyFeatureProtocol.self) {
     MyFeature()
 }
@@ -53,7 +53,7 @@ Here, `MyFeatureProtocol.self` is the type of your feature, and the closure is u
 ### 2. Resolve a Feature
 To access a registered feature, use the `resolve` method:
 
-```
+```swift
 import FeatureStore
 import UIKit
 
@@ -74,7 +74,7 @@ Make sure to replace `MyFeature` with the actual feature type you want to resolv
 ### 3. Unregister a Feature
 When a feature is no longer needed, you can `unregister` it from the feature store:
 
-```
+```swift
 FeatureStore.shared.unregister(MyFeatureProtocol.self)
 ```
 
@@ -83,7 +83,7 @@ Let's consider a scenario where you have two different modules, `FeatureA` and `
 
 Firstly, we need to register these features:
 
-```
+```swift
     FeatureStore.shared.register(FeatureAProtocol.self) {
         FeatureA()
     }
@@ -97,7 +97,7 @@ For each feature, create resolvers:
 
 FeatureA:
 
-```
+```swift
 public protocol FeatureAProtocol {
     func build() -> UIViewController
 }
@@ -110,7 +110,7 @@ public extension FeatureStore {
 ```
 
 FeatureB:
-```
+```swift
 public protocol FeatureBProtocol {
     func build() -> UIViewController
 }
@@ -124,7 +124,7 @@ public extension FeatureStore {
 
 As we want to present `FeatureB` from `FeatureA`, so we will create a `public` builder in `FeatureB`:
  
-```
+```swift
 import FeatureStore
 import UIKit
 
@@ -141,7 +141,7 @@ public struct FeatureBBuilder: FeatureBBuilderProtocol {
 
 Finally, we just need to build featureB from featureA and navigate to featureB:
 
-```
+```swift
 let controller = FeatureStore.shared.featureB.build()
 present(controller, animated: true)
 ```
