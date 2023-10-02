@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "dependencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SerhanAksut/DependencyKit.git",
+      "state" : {
+        "revision" : "a8a408344d27f1f32c9f1a38f652800ae1bc94c9",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
