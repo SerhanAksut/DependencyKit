@@ -63,7 +63,7 @@ public protocol MyFeatureProtocol {
 }
 
 public extension FeatureStore {
-    var someFeature: MyFeatureProtocol {
+    var myFeature: MyFeatureProtocol {
         resolve(MyFeatureProtocol.self)!
     }
 }
@@ -90,7 +90,6 @@ Firstly, we need to register these features:
     FeatureStore.shared.register(FeatureBProtocol.self) {
         FeatureB()
     }
-}
 ```
 
 For each feature, create resolvers:
