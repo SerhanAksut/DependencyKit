@@ -10,7 +10,6 @@ let package = Package(
         .library(name: "SecondFeature", targets: ["SecondFeature"]),
     ],
     dependencies: [
-//        .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.0.0")
         .package(path: "Packages")
     ],
     targets: [
