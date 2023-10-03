@@ -20,7 +20,7 @@ final class FeatureStoreTests: XCTestCase {
         featureStore = nil
     }
     
-    func test__resolve_when_feature_store_successful() {
+    func test__resolve_when_registration_successful() {
         featureStore.register(MockFeatureProtocol.self) {
             MockFeature()
         }
@@ -28,7 +28,7 @@ final class FeatureStoreTests: XCTestCase {
         XCTAssertNotNil(result)
     }
     
-    func test__resolve_when_feature_store_unsuccessful() {
+    func test__resolve_when_registration_failed() {
         featureStore.register(MockFeatureProtocol.self) {
             nil
         }
@@ -36,15 +36,27 @@ final class FeatureStoreTests: XCTestCase {
         XCTAssertNil(result)
     }
     
-    func test__unregister() {
+    func test__unregister_when_registration_successful() {
         featureStore.register(MockFeatureProtocol.self) {
             MockFeature()
         }
-        let registerResult = featureStore.resolve(MockFeatureProtocol.self)
-        XCTAssertNotNil(registerResult)
+        let registrationResult = featureStore.resolve(MockFeatureProtocol.self)
+        XCTAssertNotNil(registrationResult)
         
         featureStore.unregister(MockFeatureProtocol.self)
-        let unregisterResult = featureStore.resolve(MockFeatureProtocol.self)
-        XCTAssertNil(unregisterResult)
+        let unregistrationResult = featureStore.resolve(MockFeatureProtocol.self)
+        XCTAssertNil(unregistrationResult)
+    }
+    
+    func test__unregister_when_registration_failed() {
+        featureStore.register(MockFeatureProtocol.self) {
+            nil
+        }
+        let registrationResult = featureStore.resolve(MockFeatureProtocol.self)
+        XCTAssertNil(registrationResult)
+        
+        featureStore.unregister(MockFeatureProtocol.self)
+        let unregistrationResult = featureStore.resolve(MockFeatureProtocol.self)
+        XCTAssertNil(unregistrationResult)
     }
 }
