@@ -4,7 +4,7 @@ import XCTest
 @testable import FeatureStore
 
 private protocol MockFeatureProtocol {}
-private struct MockFeature: MockFeatureProtocol {}
+private struct MockFeature: MockFeatureProtocol, Equatable {}
 
 final class FeatureStoreTests: XCTestCase {
     
@@ -21,11 +21,12 @@ final class FeatureStoreTests: XCTestCase {
     }
     
     func test__resolve_when_registration_successful() {
+        let mockFeature = MockFeature()
         featureStore.register(MockFeatureProtocol.self) {
-            MockFeature()
+            mockFeature
         }
-        let result = featureStore.resolve(MockFeatureProtocol.self)
-        XCTAssertNotNil(result)
+        let result = featureStore.resolve(MockFeatureProtocol.self) as! MockFeature
+        XCTAssertEqual(result, mockFeature)
     }
     
     func test__resolve_when_registration_failed() {
@@ -37,11 +38,12 @@ final class FeatureStoreTests: XCTestCase {
     }
     
     func test__unregister_when_registration_successful() {
+        let mockFeature = MockFeature()
         featureStore.register(MockFeatureProtocol.self) {
-            MockFeature()
+            mockFeature
         }
-        let registrationResult = featureStore.resolve(MockFeatureProtocol.self)
-        XCTAssertNotNil(registrationResult)
+        let registrationResult = featureStore.resolve(MockFeatureProtocol.self) as! MockFeature
+        XCTAssertEqual(registrationResult, mockFeature)
         
         featureStore.unregister(MockFeatureProtocol.self)
         let unregistrationResult = featureStore.resolve(MockFeatureProtocol.self)
