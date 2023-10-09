@@ -27,7 +27,7 @@ You can integrate FeatureStore into your project using Swift Package Manager (SP
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.0.0")
+    .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.1.0")
 ]
 ```
 
@@ -116,6 +116,9 @@ public extension FeatureStore {
 
 FeatureB:
 ```swift
+import FeatureStore
+import UIKit
+
 public protocol FeatureBProtocol {
     func build() -> UIViewController
 }
