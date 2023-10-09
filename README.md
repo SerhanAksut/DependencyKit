@@ -1,5 +1,5 @@
 # DependencyKit
- A dependency builder library that written in Swift for UIKit projects.
+ A dependency builder library that written in Swift.
  
 # FeatureStore - Dependency Management Library
 
@@ -9,7 +9,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/SerhanAksut/DependencyKit.svg)](https://github.com/SerhanAksut/DependencyKit/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SerhanAksut/DependencyKit.svg)](https://github.com/SerhanAksut/DependencyKit/pulls)
 
-FeatureStore is a Swift package library designed to streamline feature navigation in iOS app development using UIKit. It offers an efficient method for managing and navigating between various features while optimizing `incremental build time` in UIKit applications.
+FeatureStore is a Swift package library designed to streamline feature navigation in iOS app development. It offers an efficient method for managing and navigating between various features while optimizing `incremental build time` in your applications.
 
 ## Key Features
 
@@ -38,6 +38,7 @@ import FeatureStore
 ```
 
 ## Usage
+Let's consider a UIKit app:
 To get started, follow these basic steps:
 
 ### 1. Register a Feature

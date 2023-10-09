@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SerhanAksut/DependencyKit.git",
       "state" : {
-        "revision" : "05601a53d15376c5f751566eaa85abd678d8da32",
-        "version" : "1.2.1"
+        "revision" : "5c6a0de18cd1493b7670b31b92e09f04bc3f55d5",
+        "version" : "1.3.0"
       }
     }
   ],
