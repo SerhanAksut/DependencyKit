@@ -27,7 +27,7 @@ You can integrate FeatureStore into your project using Swift Package Manager (SP
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.2.1")
+    .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.3.0")
 ]
 ```
 

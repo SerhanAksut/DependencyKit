@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "Dependencies", targets: ["Dependencies"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.2.1")
+        .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.3.0")
     ],
     targets: [
         .target(name: "Dependencies", dependencies: [
