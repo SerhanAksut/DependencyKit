@@ -1,5 +1,8 @@
 # DependencyKit
- A dependency builder library that written in Swift.
+ A dependency management library for Swift based projects.
+ 
+# Introduction
+DependencyKit is a Swift package library for seamless dependency management for Swift based projects. Effortlessly manage feature transitions and decouple modules, enhancing app maintainability and build efficiency. 
  
 # FeatureStore - Dependency Management Library
 
