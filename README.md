@@ -40,8 +40,7 @@ Then, import `FeatureStore` dependency in your Swift files where you intend to u
 import FeatureStore
 ```
 
-## Usage
-Let's consider a UIKit app:
+## Usage | UIKit & SwiftUI
 To get started, follow these basic steps:
 
 ### 1. Register a Feature
@@ -57,6 +56,7 @@ Here, `MyFeatureProtocol.self` is the type of your feature, and the closure is u
 ### 2. Resolve a Feature
 To access a registered feature, use the `resolve` method:
 
+#### UIKit
 ```swift
 import FeatureStore
 import UIKit
@@ -64,6 +64,23 @@ import UIKit
 public protocol MyFeatureProtocol {
     // Pass some parameters into the function if needed between features.
     func build() -> UIViewController
+}
+
+public extension FeatureStore {
+    var myFeature: MyFeatureProtocol {
+        resolve(MyFeatureProtocol.self)!
+    }
+}
+```
+
+#### SwiftUI
+```swift
+import FeatureStore
+import SwiftUI
+
+public protocol MyFeatureProtocol {
+    // Pass some parameters into the function if needed between features.
+    func build() -> AnyView
 }
 
 public extension FeatureStore {
@@ -89,7 +106,8 @@ Firstly, we need to register these features:
 
 ```swift
 import FeatureStore
-import UIKit
+import FeatureA
+import FeatureB
 
 FeatureStore.shared.register(FeatureAProtocol.self) {
     FeatureA()
@@ -103,6 +121,7 @@ For each feature, create resolvers:
 
 FeatureA:
 
+#### UIKit
 ```swift
 import FeatureStore
 import UIKit
@@ -118,7 +137,25 @@ public extension FeatureStore {
 }
 ```
 
+#### SwiftUI
+```swift
+import FeatureStore
+import SwiftUI
+
+public protocol FeatureAProtocol {
+    func build() -> AnyView
+}
+
+public extension FeatureStore {
+    var featureA: FeatureAProtocol {
+        resolve(FeatureAProtocol.self)!
+    }
+}
+```
+
 FeatureB:
+
+#### UIKit
 ```swift
 import FeatureStore
 import UIKit
@@ -134,8 +171,25 @@ public extension FeatureStore {
 }
 ```
 
+#### SwiftUI
+```swift
+import FeatureStore
+import SwiftUI
+
+public protocol FeatureBProtocol {
+    func build() -> AnyView
+}
+
+public extension FeatureStore {
+    var featureB: FeatureBProtocol {
+        resolve(FeatureBProtocol.self)!
+    }
+}
+```
+
 As we want to present `FeatureB` from `FeatureA`, so we will create a `public` builder in `FeatureB`:
  
+#### UIKit
 ```swift
 import FeatureStore
 import UIKit
@@ -151,11 +205,39 @@ public struct FeatureBBuilder: FeatureBBuilderProtocol {
 } 
 ```
 
+#### SwiftUI
+```swift
+import FeatureStore
+import SwiftUI
+
+public struct FeatureBBuilder: FeatureBBuilderProtocol {
+    public init() {}
+    
+    public func build() -> AnyView {
+        let featureAView = FeatureASwiftUIView()
+        // Configure your controller as needed
+        return AnyView(featureAView)
+    }
+} 
+```
+
 Finally, we just need to build featureB from featureA and navigate to featureB:
 
+#### UIKit
 ```swift
 let controller = FeatureStore.shared.featureB.build()
 present(controller, animated: true)
+```
+
+#### SwiftUI
+```swift
+var body: some View {
+    NavigationStack {
+        NavigationLink("Show FeatureB Screen") {
+            FeatureStore.shared.featureB.build()
+        }
+    }
+}
 ```
 
 ## Support
