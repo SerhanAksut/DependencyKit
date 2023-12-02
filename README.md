@@ -214,9 +214,9 @@ public struct FeatureBBuilder: FeatureBBuilderProtocol {
     public init() {}
     
     public func build() -> AnyView {
-        let featureAView = FeatureASwiftUIView()
+        let featureBView = FeatureBSwiftUIView()
         // Configure your swiftUI view as needed
-        return AnyView(featureAView)
+        return AnyView(featureBView)
     }
 } 
 ```
