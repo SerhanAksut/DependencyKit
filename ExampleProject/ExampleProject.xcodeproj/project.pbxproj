@@ -13,6 +13,7 @@
 		BE1ED3892ACB2011000B9DDA /* FeatureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED3872ACB2011000B9DDA /* FeatureBuilder.swift */; };
 		BE1ED38E2ACB203D000B9DDA /* FirstFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE1ED38D2ACB203D000B9DDA /* FirstFeature */; };
 		BE1ED3902ACB203D000B9DDA /* SecondFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE1ED38F2ACB203D000B9DDA /* SecondFeature */; };
+		BE677C7F2C034F82004706BD /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = BE677C7E2C034F82004706BD /* Dependencies */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE677C7F2C034F82004706BD /* Dependencies in Frameworks */,
 				BE1ED38E2ACB203D000B9DDA /* FirstFeature in Frameworks */,
 				BE1ED3902ACB203D000B9DDA /* SecondFeature in Frameworks */,
 			);
@@ -104,6 +106,7 @@
 			packageProductDependencies = (
 				BE1ED38D2ACB203D000B9DDA /* FirstFeature */,
 				BE1ED38F2ACB203D000B9DDA /* SecondFeature */,
+				BE677C7E2C034F82004706BD /* Dependencies */,
 			);
 			productName = ExampleProject;
 			productReference = BE1ED3742ACB1FE9000B9DDA /* ExampleProject.app */;
@@ -390,6 +393,10 @@
 		BE1ED38F2ACB203D000B9DDA /* SecondFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SecondFeature;
+		};
+		BE677C7E2C034F82004706BD /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Dependencies;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
