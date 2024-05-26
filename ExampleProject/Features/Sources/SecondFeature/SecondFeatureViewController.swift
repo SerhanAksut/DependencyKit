@@ -1,13 +1,13 @@
 
-import Dependencies
+import FeatureInterface
 import FeatureStore
 import UIKit
 
 final class SecondFeatureViewController: UIViewController {
     
-    private weak var delegate: CloseButtonDelegate?
+    private weak var delegate: SecondFeatureCloseButtonDelegate?
     
-    init(delegate: CloseButtonDelegate) {
+    init(delegate: SecondFeatureCloseButtonDelegate) {
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
@@ -43,6 +43,6 @@ final class SecondFeatureViewController: UIViewController {
     }
     
     @objc func didTapCloseButton() {
-        delegate?.didTapCloseButton(controller: self)
+        delegate?.didTapCloseButton(on: self)
     }
 }

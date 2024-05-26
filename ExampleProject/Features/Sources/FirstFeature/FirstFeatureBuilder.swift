@@ -1,5 +1,5 @@
 
-import Dependencies
+import FeatureInterface
 import UIKit
 
 public struct FirstFeatureBuilder: FirstFeatureBuilderProtocol {

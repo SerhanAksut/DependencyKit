@@ -14,10 +14,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "FirstFeature", dependencies: [
-            .product(name: "Dependencies", package: "Packages")
+            .product(name: "FeatureInterface", package: "Packages")
         ]),
         .target(name: "SecondFeature", dependencies: [
-            .product(name: "Dependencies", package: "Packages")
+            .product(name: "FeatureInterface", package: "Packages")
         ])
     ]
 )

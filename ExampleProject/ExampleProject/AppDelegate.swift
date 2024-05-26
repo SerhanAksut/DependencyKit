@@ -12,7 +12,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
-        FeatureBuilder.shared.registerFeatures()
+        FeatureStore.shared.registerFeatures()
         buildWindowRoot()
         return true
     }
