@@ -1,6 +1,6 @@
 
 import FeatureStore
-import Dependencies
+import FeatureInterface
 import UIKit
 
 final class FirstFeatureViewController: UIViewController {
@@ -44,8 +44,8 @@ final class FirstFeatureViewController: UIViewController {
     }
 }
 
-extension FirstFeatureViewController: CloseButtonDelegate {
-    func didTapCloseButton(controller: UIViewController) {
+extension FirstFeatureViewController: SecondFeatureCloseButtonDelegate {
+    func didTapCloseButton(on controller: UIViewController) {
         controller.dismiss(animated: true)
     }
 }

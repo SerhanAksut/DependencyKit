@@ -10,10 +10,10 @@
 		BE1ED37C2ACB1FEA000B9DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1ED37B2ACB1FEA000B9DDA /* Assets.xcassets */; };
 		BE1ED3802ACB1FEA000B9DDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1ED37F2ACB1FEA000B9DDA /* Preview Assets.xcassets */; };
 		BE1ED3882ACB2011000B9DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED3862ACB2011000B9DDA /* AppDelegate.swift */; };
-		BE1ED3892ACB2011000B9DDA /* FeatureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED3872ACB2011000B9DDA /* FeatureBuilder.swift */; };
-		BE1ED38E2ACB203D000B9DDA /* FirstFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE1ED38D2ACB203D000B9DDA /* FirstFeature */; };
-		BE1ED3902ACB203D000B9DDA /* SecondFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE1ED38F2ACB203D000B9DDA /* SecondFeature */; };
-		BE677C7F2C034F82004706BD /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = BE677C7E2C034F82004706BD /* Dependencies */; };
+		BE1ED3892ACB2011000B9DDA /* FeatureStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1ED3872ACB2011000B9DDA /* FeatureStore+Extensions.swift */; };
+		BE677C852C03569B004706BD /* FirstFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE677C842C03569B004706BD /* FirstFeature */; };
+		BE677C872C03569B004706BD /* SecondFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BE677C862C03569B004706BD /* SecondFeature */; };
+		BE677C892C03569B004706BD /* FeatureInterface in Frameworks */ = {isa = PBXBuildFile; productRef = BE677C882C03569B004706BD /* FeatureInterface */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +22,9 @@
 		BE1ED37D2ACB1FEA000B9DDA /* ExampleProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExampleProject.entitlements; sourceTree = "<group>"; };
 		BE1ED37F2ACB1FEA000B9DDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE1ED3862ACB2011000B9DDA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE1ED3872ACB2011000B9DDA /* FeatureBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureBuilder.swift; sourceTree = "<group>"; };
-		BE1ED38A2ACB2027000B9DDA /* Features */ = {isa = PBXFileReference; lastKnownFileType = text; path = Features; sourceTree = SOURCE_ROOT; };
-		BE1ED38B2ACB2027000B9DDA /* Packages */ = {isa = PBXFileReference; lastKnownFileType = text; path = Packages; sourceTree = SOURCE_ROOT; };
+		BE1ED3872ACB2011000B9DDA /* FeatureStore+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeatureStore+Extensions.swift"; sourceTree = "<group>"; };
+		BE677C802C0351F0004706BD /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
+		BE677C812C035452004706BD /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,9 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE677C7F2C034F82004706BD /* Dependencies in Frameworks */,
-				BE1ED38E2ACB203D000B9DDA /* FirstFeature in Frameworks */,
-				BE1ED3902ACB203D000B9DDA /* SecondFeature in Frameworks */,
+				BE677C892C03569B004706BD /* FeatureInterface in Frameworks */,
+				BE677C852C03569B004706BD /* FirstFeature in Frameworks */,
+				BE677C872C03569B004706BD /* SecondFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +44,8 @@
 		BE1ED36B2ACB1FE9000B9DDA = {
 			isa = PBXGroup;
 			children = (
+				BE677C812C035452004706BD /* Features */,
+				BE677C802C0351F0004706BD /* Packages */,
 				BE1ED3762ACB1FE9000B9DDA /* ExampleProject */,
 				BE1ED3752ACB1FE9000B9DDA /* Products */,
 				BE1ED38C2ACB203D000B9DDA /* Frameworks */,
@@ -61,10 +63,8 @@
 		BE1ED3762ACB1FE9000B9DDA /* ExampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				BE1ED38A2ACB2027000B9DDA /* Features */,
-				BE1ED38B2ACB2027000B9DDA /* Packages */,
 				BE1ED3862ACB2011000B9DDA /* AppDelegate.swift */,
-				BE1ED3872ACB2011000B9DDA /* FeatureBuilder.swift */,
+				BE1ED3872ACB2011000B9DDA /* FeatureStore+Extensions.swift */,
 				BE1ED37B2ACB1FEA000B9DDA /* Assets.xcassets */,
 				BE1ED37D2ACB1FEA000B9DDA /* ExampleProject.entitlements */,
 				BE1ED37E2ACB1FEA000B9DDA /* Preview Content */,
@@ -104,9 +104,9 @@
 			);
 			name = ExampleProject;
 			packageProductDependencies = (
-				BE1ED38D2ACB203D000B9DDA /* FirstFeature */,
-				BE1ED38F2ACB203D000B9DDA /* SecondFeature */,
-				BE677C7E2C034F82004706BD /* Dependencies */,
+				BE677C842C03569B004706BD /* FirstFeature */,
+				BE677C862C03569B004706BD /* SecondFeature */,
+				BE677C882C03569B004706BD /* FeatureInterface */,
 			);
 			productName = ExampleProject;
 			productReference = BE1ED3742ACB1FE9000B9DDA /* ExampleProject.app */;
@@ -137,6 +137,8 @@
 				Base,
 			);
 			mainGroup = BE1ED36B2ACB1FE9000B9DDA;
+			packageReferences = (
+			);
 			productRefGroup = BE1ED3752ACB1FE9000B9DDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,7 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1ED3892ACB2011000B9DDA /* FeatureBuilder.swift in Sources */,
+				BE1ED3892ACB2011000B9DDA /* FeatureStore+Extensions.swift in Sources */,
 				BE1ED3882ACB2011000B9DDA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,17 +388,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE1ED38D2ACB203D000B9DDA /* FirstFeature */ = {
+		BE677C842C03569B004706BD /* FirstFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FirstFeature;
 		};
-		BE1ED38F2ACB203D000B9DDA /* SecondFeature */ = {
+		BE677C862C03569B004706BD /* SecondFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SecondFeature;
 		};
-		BE677C7E2C034F82004706BD /* Dependencies */ = {
+		BE677C882C03569B004706BD /* FeatureInterface */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Dependencies;
+			productName = FeatureInterface;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

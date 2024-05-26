@@ -6,13 +6,13 @@ import PackageDescription
 let package = Package(
     name: "Packages",
     products: [
-        .library(name: "Dependencies", targets: ["Dependencies"])
+        .library(name: "FeatureInterface", targets: ["FeatureInterface"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SerhanAksut/DependencyKit.git", from: "1.4.0")
+        .package(url: "https://github.com/SerhanAksut/DependencyKit", from: "1.4.0")
     ],
     targets: [
-        .target(name: "Dependencies", dependencies: [
+        .target(name: "FeatureInterface", dependencies: [
             .product(name: "FeatureStore", package: "DependencyKit")
         ])
     ]
