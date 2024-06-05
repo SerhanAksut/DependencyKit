@@ -232,10 +232,9 @@ present(controller, animated: true)
 #### SwiftUI
 ```swift
 var body: some View {
-    NavigationStack {
-        NavigationLink("Show FeatureB Screen") {
-            FeatureStore.shared.featureB.build()
-        }
+    ...
+    NavigationLink("Show FeatureB Screen") {
+       FeatureStore.shared.featureB.build()
     }
 }
 ```
